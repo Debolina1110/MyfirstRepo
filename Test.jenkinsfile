@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Performing Test Build..'
-                git branch: 'main', url: 'https://github.com/Debolina1110/MyfirstRepo.git'
-                sh "chmod 777 test.sh"
+                //git branch: 'main', url: 'https://github.com/Debolina1110/MyfirstRepo.git'
+                //sh "chmod 777 test.sh"
                 sh "./test.sh"
             }
         }
