@@ -5,9 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Performing Test Build..'
-                checkout scm
-                sh 'mkdir -p TestFolder'
-                //sh ('./test.sh')
+                git url: 'https://github.com/Debolina1110/MyfirstRepo.git', branch: 'main'
+                sh "chmod +x -R ./test.sh"
             }
         }
     }
