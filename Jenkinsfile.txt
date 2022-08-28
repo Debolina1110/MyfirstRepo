@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Performing Test Build..'
                 checkout scm
-                sh sh 'mkdir -p TestFolder'
+                sh 'mkdir -p TestFolder'
                 //sh ('./test.sh')
             }
         }
