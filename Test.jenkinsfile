@@ -7,7 +7,8 @@ pipeline {
                 echo 'Performing Test Build..'
                 //git branch: 'main', url: 'https://github.com/Debolina1110/MyfirstRepo.git'
                 //sh "chmod 777 test.sh"
-                sh "test.sh"
+                //sh "pwsh test.ps1"
+                bat "test.sh"
             }
         }
     }
