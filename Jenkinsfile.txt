@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Performing Test Build..'
-                sh 'Debolina1110/MyfirstRepo/test.sh' 
+                sh 'sudo sh $PWD/test.sh' 
             }
         }
     }
