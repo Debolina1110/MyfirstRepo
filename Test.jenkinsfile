@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Performing Test Build..'
                 git url: 'https://github.com/Debolina1110/MyfirstRepo.git', branch: 'main'
-                credentialsId: 'jenkins-integration'
+                //credentialsId: 'jenkins-integration'
                 sh "chmod +x -R ./test.sh"
                 sh "./test.sh"
             }
