@@ -1,16 +1,18 @@
 pipeline {
     agent any
 
+   node{
     stages {
         stage('Build') {
             steps {
                 echo 'Performing Test Build..'
-                //git url: 'https://github.com/Debolina1110/MyfirstRepo.git', branch: 'main'
-                //sh "chmod +x -R ./test.sh"
-                //sh "./test.sh"
+                git branch: 'main', git url: 'https://github.com/Debolina1110/MyfirstRepo.git'
+                sh "chmod 777 test.sh"
+                sh "./test.sh"
             }
         }
     }
 
-}        
+}     
+}   
         
