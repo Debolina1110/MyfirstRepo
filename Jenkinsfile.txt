@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Performing Test Build..'
-                sh 'sudo sh $PWD/test.sh' 
+                checkout scm
+                sh ('./test.sh')
             }
         }
     }
