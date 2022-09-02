@@ -7,7 +7,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      name: 'myagentpool'
+      name: 'windows-latest'
     steps:
     - bash: |         
         chmod 777 test.sh
