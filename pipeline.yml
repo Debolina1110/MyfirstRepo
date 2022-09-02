@@ -13,3 +13,5 @@ stages:
         chmod 777 test.sh
     - bash: |
         ./test.sh    
+    - bash: |
+        pwsh -Command ".\test.ps1"    
