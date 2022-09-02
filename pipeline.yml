@@ -15,6 +15,13 @@ stages:
         ./test.sh    
     - bash: |
         pwsh -Command ".\test.ps1"    
+    - task: AzurePowerShell@5
+      inputs:
+        azureSubscription: MyServiceConn
+        scriptType: filePath
+        scriptPath: $(Build.SourcesDirectory)\test.ps1
+        azurePowerShellVersion: latestVersion
+        pwsh: true 
     - task: AzureCLI@2
       displayName: 'Testing Connection with Azure'
       inputs:
@@ -22,11 +29,4 @@ stages:
         scriptType: bash
         scriptLocation: inlineScript
         inlinescript: |
-          az --version
-    - task: AzurePowerShell@5
-      inputs:
-        azureSubscription: MyServiceConn
-        scriptType: filePath
-        scriptPath: $(Build.SourcesDirectory)\test.ps1
-        azurePowerShellVersion: latestVersion
-        pwsh: true      
+          az --version         
