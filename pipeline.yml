@@ -9,5 +9,7 @@ stages:
     pool:
       name: 'myagentpool'
     steps:
+    - bash: |         
+        chmod 777 test.sh
     - bash: |
-        ./test.sh  
+        ./test.sh    
