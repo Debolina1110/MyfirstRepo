@@ -19,7 +19,7 @@ stages:
       inputs:
         azureSubscription: MyServiceConn
         scriptType: filePath
-        scriptPath: $(Build.SourcesDirectory)\test.ps1
+        scriptPath: test.ps1
         azurePowerShellVersion: latestVersion
         pwsh: true 
     - task: AzureCLI@2
