@@ -23,6 +23,4 @@ stages:
         scriptLocation: inlineScript
         inlinescript: |
           az --version
-          az account list --all --output table
-          az account set --subscription '7d76d198-6608-47d5-b37f-7d634f29ee78' 
           az group show -n 'TestAppDeployment'
