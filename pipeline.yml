@@ -18,9 +18,15 @@ stages:
     - task: AzureCLI@2
       displayName: 'Testing Connection with Azure'
       inputs:
-        azureSubscription: 'MyServiceConn'    
+        azureSubscription: MyServiceConn
         scriptType: bash
         scriptLocation: inlineScript
         inlinescript: |
           az --version
-          az group show -n 'TestAppDeployment'
+    - task: AzurePowerShell@5
+      inputs:
+        azureSubscription: MyServiceConn
+        scriptType: filePath
+        scriptPath: $(Build.SourcesDirectory)\test.ps1
+        azurePowerShellVersion: latestVersion
+        pwsh: true      
