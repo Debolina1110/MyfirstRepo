@@ -7,14 +7,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      name: 'windows-latest'
-    steps:
-    - bash: |         
-        chmod 777 test.sh
-    - bash: |
-        ./test.sh    
-    - bash: |
-        pwsh -Command ".\test.ps1"    
+      vmImage: 'windows-latest'   
     - task: AzurePowerShell@5
       inputs:
         azureSubscription: MyServiceConn
