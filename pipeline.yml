@@ -1,0 +1,13 @@
+trigger:
+- master
+
+stages:
+- stage: BuildTest
+  displayName: BuildTestDName
+  jobs:
+  - job: BuildJob
+    pool:
+      name: 'myagentpool'
+    steps:
+    - bash: |
+        ./test.sh  
