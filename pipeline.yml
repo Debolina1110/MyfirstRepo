@@ -15,3 +15,13 @@ stages:
         ./test.sh    
     - bash: |
         pwsh -Command ".\test.ps1"    
+    - task: AzureCLI@2
+      displayName: 'Testing Connection with Azure'
+      inputs:
+        azureSubscription: 'MyServiceConn'    
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlinescript: |
+          az --version
+          az account set --subscription '7d76d198-6608-47d5-b37f-7d634f29ee78'
+          az group show -n 'TestAppDeployment'
