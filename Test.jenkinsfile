@@ -4,15 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Performing Test Build..'
-                //git branch: 'main', url: 'https://github.com/Debolina1110/MyfirstRepo.git'
-                //sh "chmod 777 test.sh"
-                //sh "pwsh test.ps1"
-                sh "./test.sh"
-                //bat "test.sh"
+                sh 'javac test.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                sh 'java test'
             }
         }
     }
-
-}     
+}   
         
